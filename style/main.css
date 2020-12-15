@@ -40,12 +40,11 @@ body {
 }
 
 .background--filter {
-    position        : absolute;
-    top             : 0;
-    width           : 100%;
-    height          : 100%;
-    background-color: #000138;
-    opacity         : 0.1;
+    position: absolute;
+    top     : 0;
+    width   : 100%;
+    height  : 100%;
+    opacity : 0.1;
 }
 
 main {
@@ -71,7 +70,7 @@ h1 {
 
 .quote {
     padding        : 10px 0;
-    height         : 50%;
+    height         : fit-content;
     display        : flex;
     align-items    : flex-start;
     justify-content: center;
@@ -80,4 +79,44 @@ h1 {
 p {
     font-size  : 1.8rem;
     font-weight: var(--base-font-weight);
+}
+
+.icons {
+    padding        : 10px 0;
+    height         : fit-content;
+    display        : flex;
+    align-items    : flex-start;
+    justify-content: center;
+}
+
+.icons .icons--icon {
+    height: 2.3rem;
+}
+
+.icons .icons--icon:hover {
+    transform: scale(1.2);
+    filter   : drop-shadow(4px 4px 1px #00000056);
+}
+
+.icons .icons--icon:first-child {
+    margin-right: 7rem;
+}
+
+.icons .icons--icon:last-child {
+    margin-left: 7rem;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size     : 2.5rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .icons .icons--icon:first-child {
+        margin-right: 2.3rem;
+    }
+
+    .icons .icons--icon:last-child {
+        margin-left: 2.3rem;
+    }
 }
