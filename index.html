@@ -4,41 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramb Memburg | Software Developer</title>
-    <link rel="stylesheet" href="style/main.css">
+    <title>Ramb Memburg | Software Engineer</title>
+    <link rel="stylesheet" href="src/styles/app.css">
 </head>
 
 <body>
-    <div class="background">
-        <div class="background--image" id="background--image"></div>
-        <div class="background--filter" id="background--filter"></div>
-    </div>
+    <header>
+        <div class="date">
+            <span id="date">24 Jan 16:32</span>
+        </div>
+    </header>
 
     <main>
-        <div class="info">
-            <h1>Ramb Memburg</h1>
+        <div class="window bio">
+            <div class="vim">
+                <div class="vim__bar">
+                    <div class="vim__filename">
+                        <span>myinfo.py</span>
+                    </div>
+
+                    <div class="vim__buffers">
+                        <span>buffers</span>
+                    </div>
+                </div>
+
+                <div class="vim__editor">
+                    <div class="vim__lines">
+                        <div class="vim__line">10</div>
+                        <div class="vim__line">9</div>
+                        <div class="vim__line">8</div>
+                        <div class="vim__line">7</div>
+                        <div class="vim__line">6</div>
+                        <div class="vim__line">5</div>
+                        <div class="vim__line">4</div>
+                        <div class="vim__line">3</div>
+                        <div class="vim__line">2</div>
+                        <div class="vim__line">1</div>
+                        <div class="vim__line vim__line--active">0</div>
+                        <div class="vim__line">1</div>
+                        <div class="vim__line">2</div>
+                        <div class="vim__line">3</div>
+                        <div class="vim__line">4</div>
+                        <div class="vim__line">5</div>
+                        <div class="vim__line">6</div>
+                        <div class="vim__line">7</div>
+                    </div>
+
+                    <div class="vim__code">
+                        <div class="vim__line">
+                            <span class="comment">#!/usr/bin/env python</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="comment"># -*- coding: utf-8 -*-</span>
+                        </div>
+
+                        <div class="vim__line"></div>
+
+                        <div class="vim__line">
+                            <span class="variable">__author__</span>
+                            <span class="operator">=</span>
+                            <span class="string">"Rubén Andrés Mendoza Burgos"</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="variable">__school__</span>
+                            <span class="operator">=</span>
+                            <span class="string">"Universidad Autónoma de Querétaro"</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="variable">__email__</span>
+                            <span class="operator">=</span>
+                            <span class="string">"heisramby@gmail.com"</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="variable">__github__</span>
+                            <span class="operator">=</span>
+                            <span class="string">"@memburg"</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="variable">__job__</span>
+                            <span class="operator">=</span>
+                            <span class="string">"Deloitte"</span>
+                        </div>
+
+                        <div class="vim__line"></div>
+
+                        <div class="vim__line">
+                            <span class="multiline">"""myinfo.py: This short script</span>
+                        </div>
+
+                        <div class="vim__line">
+                            <span class="multiline">storages my basic info."""</span>
+                            <span class="current">█</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="quote">
-            <p id="quote"></p>
-        </div>
-
-        <div class="icons">
-            <a href="https://github.com/memburg" target="_blank">
-                <img class="icons--icon" src="img/github.svg" alt="logo">
-            </a>
-
-            <a href="https://www.linkedin.com/in/memburg/" target="_blank">
-                <img class="icons--icon" src="img/linkedin.svg" alt="logo">
-            </a>
-
-            <a href="https://twitter.com/memburg" target="_blank">
-                <img class="icons--icon" src="img/twitter.svg" alt="logo">
-            </a>
-        </div>
+        <div class="window projects"></div>
+        <div class="window experience"></div>
     </main>
 
-    <script src="js/app.js"></script>
+    <script src="src/javascript/app.js"></script>
 </body>
 
 </html>
