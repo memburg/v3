@@ -114,12 +114,14 @@ main .experience {
 }
 
 .vim__editor .vim__lines .vim__line {
-    padding-right: 0.3rem;
-    height       : calc(100% / 31);
-    width        : 100%;
-    color        : #555555;
-    font-weight  : 700;
-    text-align   : right;
+    padding-right  : 0.3rem;
+    height         : calc(100% / 31);
+    width          : 100%;
+    color          : #555555;
+    font-weight    : 700;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-around;
 }
 
 .vim__editor .vim__lines .vim__line--active {
@@ -137,6 +139,8 @@ main .experience {
     width        : 100%;
     padding-left : 0.3rem;
     padding-right: 0.3rem;
+    display      : flex;
+    align-items  : center;
 }
 
 .comment {
