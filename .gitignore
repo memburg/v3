@@ -1,1 +1,1 @@
-index.dev.html
+echo index.dev.html >> .gitignore $ git rm --cached debug.log rm 'index.dev.html' $ git commit -m "Start ignoring index.dev.html" 
