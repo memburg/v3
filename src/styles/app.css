@@ -16,12 +16,14 @@ html {
     background-image   : url('../img/ik2u974r3v531.jpg');
     background-position: top;
     background-size    : cover;
+    height             : 100%;
 }
 
 body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-size  : 1.5rem;
+    height     : 100%;
 }
 
 header {
@@ -37,7 +39,7 @@ header {
 
 main {
     width                : 100%;
-    height               : calc(100vh - var(--header-height));
+    height               : calc(100% - var(--header-height));
     padding              : 1.2rem;
     display              : grid;
     gap                  : 1.2rem;
@@ -81,15 +83,16 @@ main .experience {
 
 .vim .vim__bar .vim__filename,
 .vim .vim__bar .vim__buffers {
-    width         : 10rem;
+    width         : fit-content;
+    padding       : 0 0.2rem;
     text-align    : center;
     letter-spacing: 0.2rem;
 }
 
 .vim .vim__bar .vim__filename {
-    height          : 100%;
     background-color: #6d59c4;
     color           : #b9afee;
+    height          : 100%;
 }
 
 .vim .vim__bar .vim__buffers {
@@ -112,7 +115,7 @@ main .experience {
 
 .vim__editor .vim__lines .vim__line {
     padding-right: 0.3rem;
-    height       : calc(100% / 18);
+    height       : calc(100% / 31);
     width        : 100%;
     color        : #555555;
     font-weight  : 700;
@@ -130,7 +133,7 @@ main .experience {
 }
 
 .vim__editor .vim__code .vim__line {
-    height       : calc(100% / 18);
+    height       : calc(100% / 31);
     width        : 100%;
     padding-left : 0.3rem;
     padding-right: 0.3rem;
@@ -153,8 +156,9 @@ main .experience {
     color: #c7c7c7;
 }
 
-.multiline {
-    color: #71ff39;
+.bin {
+    color      : #39ff74;
+    font-weight: 700;
 }
 
 .current {
