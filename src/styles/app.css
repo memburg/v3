@@ -143,25 +143,48 @@ main .experience {
     align-items  : center;
 }
 
+.bio .vim__editor .vim__code .vim__line {
+    width        : 100%;
+    padding-left : 0.3rem;
+    padding-right: 0.3rem;
+    height       : calc(100% / 15);
+    display      : block;
+    color        : white;
+}
+
 .comment {
-    color     : #868686;
+    color     : #c9c9c9;
     font-style: oblique
 }
 
 .string {
-    color: #4baeff;
+    color: #82b7e2;
 }
 
 .variable {
-    color: #c469cc;
+    color: #db92e2;
 }
 
 .operator {
     color: #c7c7c7;
 }
 
-.bin {
-    color      : #39ff74;
+.zero {
+    color: #be95e5;
+}
+
+.bin,
+.user {
+    color      : #b1e45f;
+    font-weight: 700;
+}
+
+.command {
+    color: #fae9e9;
+}
+
+.tilde {
+    color      : #4ea9ce;
     font-weight: 700;
 }
 
