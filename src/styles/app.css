@@ -188,14 +188,30 @@ main .experience {
     font-weight: 700;
 }
 
+.current--vim {
+    color: #d3d3d3;
+}
+
 .current {
     color    : #d3d3d3;
-    animation: pulse 0.4s infinite alternate-reverse;
+    animation: pulse 0.5s infinite alternate-reverse;
 }
 
 @keyframes pulse {
     0% {
         color: #d3d3d3;
+    }
+
+    40% {
+        color: #d3d3d3;
+    }
+
+    50% {
+        color: #d3d3d3;
+    }
+
+    60% {
+        color: #d3d3d300;
     }
 
     100% {
