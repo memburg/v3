@@ -1,0 +1,9 @@
+{
+    "navbar": {
+        "profile": "perfil",
+        "experience": "experiencia",
+        "projects": "proyectos",
+        "contact": "contacto"
+    },
+    "content": {}
+}

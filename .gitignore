@@ -1,0 +1,5 @@
+node_modules
+
+# Ignore bundle.js in src folder because this file
+# is an intermediary between babel and rollup.
+src/bundle.js
