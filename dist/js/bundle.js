@@ -6,7 +6,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var profile = {
+var profile$1 = {
   'profileName': {
     'en': 'name',
     'es': 'nombre'
@@ -52,8 +52,8 @@ var profile = {
     'es': 'rol'
   },
   'profileRoleContent': {
-    'en': 'qa analyst',
-    'es': 'analista de qa'
+    'en': 'systems engineering analyst',
+    'es': 'analista de ingeniería de sistemas'
   },
   'profileMoreStuff': {
     'en': 'more stuff',
@@ -64,12 +64,30 @@ var profile = {
     'es': "SOY APASIONADO POR LA CIENCIA Y LA TECNOLOGÍA, SIEMPRE QUIERO APRENDER COSAS NUEVAS. ME GUSTA EL ATLETISMO Y JUGAR VIDEOJUEGOS. ALGUNOS LENGUAJES DE PROGRAMACIÓN QUE ME GUSTAN Y CON LOS QUE ME SIENTO CÓMODO SON JAVASCRIPT, PYTHON, MATLAB Y C; ACTUALMENTE TAMBIÉN ESTOY APRENDIENDO CRYSTAL."
   }
 };
+var navbar$1 = {
+  'navbarProfile': {
+    'en': 'profile',
+    'es': 'perfil'
+  },
+  'navbarExperience': {
+    'en': 'experience',
+    'es': 'experiencia'
+  },
+  'navbarProjects': {
+    'en': 'projects',
+    'es': 'proyectos'
+  },
+  'navbarContact': {
+    'en': 'contact',
+    'es': 'contacto'
+  }
+};
 
 var Profile = /*#__PURE__*/function () {
   function Profile() {
     _classCallCheck(this, Profile);
 
-    this.data = profile;
+    this.data = profile$1;
   }
 
   _createClass(Profile, [{
@@ -88,5 +106,40 @@ var Profile = /*#__PURE__*/function () {
   return Profile;
 }();
 
-var x = new Profile();
-x.renderData("en");
+var Navbar = /*#__PURE__*/function () {
+  function Navbar() {
+    _classCallCheck(this, Navbar);
+
+    this.data = navbar$1;
+  }
+
+  _createClass(Navbar, [{
+    key: "renderData",
+    value: function renderData(lang) {
+      for (var k in this.data) {
+        document.getElementById(k).innerText = this.data[k][lang].toUpperCase();
+      }
+    }
+  }]);
+
+  return Navbar;
+}();
+
+var profile = new Profile();
+var navbar = new Navbar();
+
+switch (localStorage.getItem('lang')) {
+  case 'en':
+    profile.renderData('en');
+    navbar.renderData('en');
+    break;
+
+  case 'es':
+    profile.renderData('es');
+    navbar.renderData('es');
+    break;
+
+  default:
+    profile.renderData('en');
+    break;
+}

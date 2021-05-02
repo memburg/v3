@@ -44,8 +44,8 @@ export const profile = {
         'es': 'rol'
     },
     'profileRoleContent': {
-        'en': 'qa analyst',
-        'es': 'analista de qa'
+        'en': 'systems engineering analyst',
+        'es': 'analista de ingeniería de sistemas'
     },
     'profileMoreStuff': {
         'en': 'more stuff',
@@ -54,5 +54,24 @@ export const profile = {
     'profileMoreStuffContent': {
         'en': "I'M PASSIONATE ABOUT SCIENCE AND TECHNOLOGY, I ALWAYS WANT TO LEARN NEW THINGS. I LIKE ATHLETICS AND PLAYING VIDEOGAMES. SOME PROGRAMMING LANGUAGES I LIKE AND I FEEL COMFORTABLE WITH ARE JAVASCRIPT, PYTHON, MATLAB, AND C; ALSO I'M CURRENTLY LEARNING CRYSTAL.",
         'es': "SOY APASIONADO POR LA CIENCIA Y LA TECNOLOGÍA, SIEMPRE QUIERO APRENDER COSAS NUEVAS. ME GUSTA EL ATLETISMO Y JUGAR VIDEOJUEGOS. ALGUNOS LENGUAJES DE PROGRAMACIÓN QUE ME GUSTAN Y CON LOS QUE ME SIENTO CÓMODO SON JAVASCRIPT, PYTHON, MATLAB Y C; ACTUALMENTE TAMBIÉN ESTOY APRENDIENDO CRYSTAL."
+    }
+}
+
+export const navbar = {
+    'navbarProfile': {
+        'en': 'profile',
+        'es': 'perfil'
+    },
+    'navbarExperience': {
+        'en': 'experience',
+        'es': 'experiencia'
+    },
+    'navbarProjects': {
+        'en': 'projects',
+        'es': 'proyectos'
+    },
+    'navbarContact': {
+        'en': 'contact',
+        'es': 'contacto'
     }
 }
