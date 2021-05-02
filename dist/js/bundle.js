@@ -83,14 +83,45 @@ var navbar$1 = {
   }
 };
 
+var Navbar = /*#__PURE__*/function () {
+  function Navbar() {
+    _classCallCheck(this, Navbar);
+
+    this.data = navbar$1;
+    this.ui = "<div class=\"window__option\"> <span id=\"navbarProfile\"></span></div><div class=\"window__option\"> <span id=\"navbarExperience\"></span></div><div class=\"window__option\"> <span id=\"navbarProjects\"></span></div><div class=\"window__option\"> <span id=\"navbarContact\"></span></div>";
+  }
+
+  _createClass(Navbar, [{
+    key: "renderUI",
+    value: function renderUI() {
+      document.getElementById('navbarOptions').innerHTML = this.ui;
+    }
+  }, {
+    key: "renderData",
+    value: function renderData(lang) {
+      for (var k in this.data) {
+        document.getElementById(k).innerText = this.data[k][lang].toUpperCase();
+      }
+    }
+  }]);
+
+  return Navbar;
+}();
+
 var Profile = /*#__PURE__*/function () {
   function Profile() {
     _classCallCheck(this, Profile);
 
     this.data = profile$1;
+    this.ui = "<div class=\"content__profile\"><div class=\"profile__wrapper\"><div class=\"profile__photo\"> <img src=\"./static/img/me.png\"></div><div class=\"profile__info--top\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileName\"></span> <span id=\"profileNameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileLocation\"></span> <span id=\"profileLocationContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileNickname\"></span> <span id=\"profileNicknameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileWorkingAt\"></span> <span id=\"profileWorkingAtContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileRole\"></span> <span id=\"profileRoleContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileEducation\"></span> <span id=\"profileEducationContent\"></span></div></div></div><div class=\"profile__info--bottom\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileMoreStuff\"></span> <span id=\"profileMoreStuffContent\"></span></div></div></div>";
   }
 
   _createClass(Profile, [{
+    key: "renderUI",
+    value: function renderUI() {
+      document.getElementById('windowContent').innerHTML = this.ui;
+    }
+  }, {
     key: "renderData",
     value: function renderData(lang) {
       for (var k in this.data) {
@@ -106,40 +137,25 @@ var Profile = /*#__PURE__*/function () {
   return Profile;
 }();
 
-var Navbar = /*#__PURE__*/function () {
-  function Navbar() {
-    _classCallCheck(this, Navbar);
-
-    this.data = navbar$1;
-  }
-
-  _createClass(Navbar, [{
-    key: "renderData",
-    value: function renderData(lang) {
-      for (var k in this.data) {
-        document.getElementById(k).innerText = this.data[k][lang].toUpperCase();
-      }
-    }
-  }]);
-
-  return Navbar;
-}();
-
-var profile = new Profile();
 var navbar = new Navbar();
+var profile = new Profile(); // First render UI
+
+navbar.renderUI();
+profile.renderUI(); // Then render data based on selected language
 
 switch (localStorage.getItem('lang')) {
   case 'en':
-    profile.renderData('en');
     navbar.renderData('en');
+    profile.renderData('en');
     break;
 
   case 'es':
-    profile.renderData('es');
     navbar.renderData('es');
+    profile.renderData('es');
     break;
 
   default:
+    navbar.renderData('en');
     profile.renderData('en');
     break;
 }
