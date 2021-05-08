@@ -27,10 +27,12 @@ navbar.tabs.experience.addEventListener('click', () => {
 
 navbar.tabs.projects.addEventListener('click', () => {
     profile.renderUI();
+    profile.renderData();
 });
 
 navbar.tabs.contact.addEventListener('click', () => {
-    profile.renderUI();
+    experience.renderUI();
+    experience.renderData();
 });
 
 // Then render data based on selected language

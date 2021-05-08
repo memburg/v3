@@ -178,25 +178,27 @@ var Profile = /*#__PURE__*/function () {
   function Profile() {
     _classCallCheck(this, Profile);
 
-    this.data = profile$1;
+    this.bar = "<div class=\"window__close\"></div><div class=\"window__title\"><span id=\"windowTitle\"></span></div>";
     this.ui = "<div class=\"content__profile\"><div class=\"profile__wrapper\"><div class=\"profile__photo\"> <img src=\"./static/img/me.png\"></div><div class=\"profile__info--top\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileName\"></span> <span id=\"profileNameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileLocation\"></span> <span id=\"profileLocationContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileNickname\"></span> <span id=\"profileNicknameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileWorkingAt\"></span> <span id=\"profileWorkingAtContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileRole\"></span> <span id=\"profileRoleContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileEducation\"></span> <span id=\"profileEducationContent\"></span></div></div></div><div class=\"profile__info--bottom\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileMoreStuff\"></span> <span id=\"profileMoreStuffContent\"></span></div></div></div>";
   }
 
   _createClass(Profile, [{
     key: "renderUI",
     value: function renderUI() {
+      document.getElementById('windowBar').innerHTML = this.bar;
       document.getElementById('windowContent').innerHTML = this.ui;
     }
   }, {
     key: "renderData",
     value: function renderData() {
       var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+      document.getElementById('windowTitle').innerHTML = navbar$1.navbarProfile[lang];
 
-      for (var k in this.data) {
+      for (var k in profile$1) {
         if (k.includes('Content')) {
-          document.getElementById(k).innerText = this.data[k][lang];
+          document.getElementById(k).innerText = profile$1[k][lang];
         } else {
-          document.getElementById(k).innerText = "".concat(this.data[k][lang], ":");
+          document.getElementById(k).innerText = "".concat(profile$1[k][lang], ":");
         }
       }
     }
@@ -209,22 +211,24 @@ var Experience = /*#__PURE__*/function () {
   function Experience() {
     _classCallCheck(this, Experience);
 
-    this.data = experience$1;
+    this.bar = "<div class=\"window__close\"></div><div class=\"window__title\"><span id=\"windowTitle\"></span></div>";
     this.ui = "<div class=\"content__experience\"><div class=\"experience__container\"><div class=\"experice__company\"> <span id=\"experienceCompany-1\"></span><span id=\"experienceDate-1\"></span></div><div class=\"experice__role\"> <span id=\"experienceRole-1\"></span></div><div class=\"experice__desc\"> <span id=\"experienceDesc-1\"></span></div></div><div class=\"experience__container\"><div class=\"experice__company\"> <span id=\"experienceCompany-2\"></span><span id=\"experienceDate-2\"></span></div><div class=\"experice__role\"> <span id=\"experienceRole-2\"></span></div><div class=\"experice__desc\"> <span id=\"experienceDesc-2\"></span></div></div><div class=\"experience__container\"><div class=\"experice__company\"> <span id=\"experienceCompany-3\"></span><span id=\"experienceDate-3\"></span></div><div class=\"experice__role\"> <span id=\"experienceRole-3\"></span></div><div class=\"experice__desc\"> <span id=\"experienceDesc-3\"></span></div></div></div>";
   }
 
   _createClass(Experience, [{
     key: "renderUI",
     value: function renderUI() {
+      document.getElementById('windowBar').innerHTML = this.bar;
       document.getElementById('windowContent').innerHTML = this.ui;
     }
   }, {
     key: "renderData",
     value: function renderData() {
       var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+      document.getElementById('windowTitle').innerHTML = navbar$1.navbarExperience[lang];
 
-      for (var k in this.data) {
-        document.getElementById(k).innerText = this.data[k][lang];
+      for (var k in experience$1) {
+        document.getElementById(k).innerText = experience$1[k][lang];
       }
     }
   }]);
@@ -252,9 +256,11 @@ navbar.tabs.experience.addEventListener('click', function () {
 });
 navbar.tabs.projects.addEventListener('click', function () {
   profile.renderUI();
+  profile.renderData();
 });
 navbar.tabs.contact.addEventListener('click', function () {
-  profile.renderUI();
+  experience.renderUI();
+  experience.renderData();
 }); // Then render data based on selected language
 // switch (localStorage.getItem('lang')) {
 //     case 'en':
