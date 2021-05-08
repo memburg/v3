@@ -10,12 +10,14 @@ export default class Profile {
         document.getElementById('windowContent').innerHTML = this.ui;
     }
 
-    renderData(lang) {
+    renderData() {
+        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+
         for (const k in this.data) {
             if (k.includes('Content')) {
-                document.getElementById(k).innerText = this.data[k][lang].toUpperCase();
+                document.getElementById(k).innerText = this.data[k][lang];
             } else {
-                document.getElementById(k).innerText = `${this.data[k][lang].toUpperCase()}:`;
+                document.getElementById(k).innerText = `${this.data[k][lang]}:`;
             }
         }
     }

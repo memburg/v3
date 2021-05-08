@@ -134,6 +134,34 @@ body {
 .window .window__content .content__profile .profile__info--bottom {
   padding-top: 0.7rem;
 }
+.window .window__content .content__experience {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+}
+.window .window__content .content__experience .experice__company {
+  width: 100%;
+  height: fit-content;
+  font-size: 1.6rem;
+  color: #0257b8;
+}
+.window .window__content .content__experience span[id^=experienceDate] {
+  font-size: 1.1rem;
+  color: #0f0f0f;
+}
+.window .window__content .content__experience .experice__role {
+  font-size: 1.2rem;
+  color: #414141;
+}
+.window .window__content .content__experience .experice__desc {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #161616;
+  text-align: justify;
+}
 .window .window__bar:active {
   cursor: grabbing;
 }
