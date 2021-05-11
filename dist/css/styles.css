@@ -20,6 +20,8 @@ body {
 .window {
   width: 40%;
   height: 60%;
+  max-height: 40.4rem;
+  max-width: 54.6rem;
   top: 50%;
   left: 0;
   right: 0;
