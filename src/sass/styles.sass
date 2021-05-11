@@ -102,40 +102,30 @@ body
         .content__profile
             width: 100%
             height: 100%
+            padding: 1.5rem 0.5rem
+            display: flex
+            justify-content: space-between
 
-            .profile__wrapper
-                width: 100%
-                height: 40%
+            .profile__info--top
                 display: flex
-                column-gap: 0.5rem
-
-                .profile__photo
-                    max-width: fit-content
-                    height: 100%
-
-                    img
-                        height: 100%
-                        width: auto
-
-                .profile__info--top
-                    height: 100%
-                    width: 100%
+                flex-direction: column
+                justify-content: space-between
 
             .info__line
                 width: 100%
-                font-size: 1.3rem
                 color: #161616
                 text-align: justify
+                font-size: 1.1rem
+                display: flex
+                flex-direction: column
 
                 span.info__line--property
-                    font-weight: bolder
                     color: #0257b8
+                    font-size: 1.5rem
+                    margin-bottom: 0.3rem
 
             .info__line + .info__line
                 margin-top: 0.7rem
-
-            .profile__info--bottom
-                padding-top: 0.7rem
 
         .content__experience
             height: 100%
@@ -148,7 +138,7 @@ body
             .experice__company
                 width: 100%
                 height: fit-content
-                font-size: 1.6rem
+                font-size: 1.5rem
                 color: #0257b8
 
             span[id^="experienceDate"]

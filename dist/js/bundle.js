@@ -12,20 +12,20 @@ var profile$1 = {
     'es': 'NOMBRE'
   },
   'profileNameContent': {
-    'en': 'RUBÉN ANDREŚ MENDOZA BURGOS',
-    'es': 'RUBÉN ANDREŚ MENDOZA BURGOS'
+    'en': 'RUBÉN ANDRÉS MENDOZA BURGOS',
+    'es': 'RUBÉN ANDRÉS MENDOZA BURGOS'
   },
   'profileLocation': {
     'en': 'LOCATION',
     'es': 'LOCALIZACIÓN'
   },
   'profileLocationContent': {
-    'en': 'QUERÉTARO',
-    'es': 'QUERÉTARO'
+    'en': 'QUERETARO, MEXICO',
+    'es': 'QUERÉTARO, MÉXICO'
   },
   'profileNickname': {
-    'en': 'NICKNAME',
-    'es': 'APODO'
+    'en': 'PSEUDONYM',
+    'es': 'PSEUDÓNIMO'
   },
   'profileNicknameContent': {
     'en': 'RAMB MEMBURG',
@@ -38,22 +38,6 @@ var profile$1 = {
   'profileEducationContent': {
     'en': 'AUTONOMOUS UNIVERSITY OF QUERÉTARO',
     'es': 'UNIVERSIDAD AUTÓNOMA DE QUERÉTARO'
-  },
-  'profileWorkingAt': {
-    'en': 'WORKING AT',
-    'es': 'TRABAJANDO EN'
-  },
-  'profileWorkingAtContent': {
-    'en': 'DELOITTE',
-    'es': 'DELOITTE'
-  },
-  'profileRole': {
-    'en': 'ROLE',
-    'es': 'ROL'
-  },
-  'profileRoleContent': {
-    'en': 'SYSTEMS ENGINEERING ANALYST',
-    'es': 'ANALISTA DE INGENIERÍA EN SISTEMAS'
   },
   'profileMoreStuff': {
     'en': 'MORE STUFF',
@@ -113,7 +97,7 @@ var experience$1 = {
   },
   'experienceDesc-2': {
     'en': 'I LEARNT AUTOMATION TESTING TOOLS SUCH AS SELENIUM AND APPIUM, ISTQB PRINCIPLES, ORAL SPEECH AND COMMUNICATION TECHNIQUES; AND DEVELOPMENT METHODOLOGIES SUCH AS WATERFALL AND SCRUM.',
-    'es': 'APRENDÍ HERRAMIENTAS DE PRUEBA DE AUTOMATIZACIÓN COMO SELENIO Y APPIUM, PRINCIPIOS ISTQB, TÉCNICAS DE HABLA ORAL Y COMUNICACIÓN; Y METODOLOGÍAS DE DESARROLLO COMO WATERFALL Y SCRUM.'
+    'es': 'APRENDÍ HERRAMIENTAS DE PRUEBA DE AUTOMATIZACIÓN COMO SELENIUM Y APPIUM, PRINCIPIOS ISTQB, TÉCNICAS DE HABLA ORAL Y COMUNICACIÓN; Y METODOLOGÍAS DE DESARROLLO COMO WATERFALL Y SCRUM.'
   },
   'experienceCompany-3': {
     'en': 'UNAM-LAVIS',
@@ -179,7 +163,7 @@ var Profile = /*#__PURE__*/function () {
     _classCallCheck(this, Profile);
 
     this.bar = "<div class=\"window__close\"></div><div class=\"window__title\"><span id=\"windowTitle\"></span></div>";
-    this.ui = "<div class=\"content__profile\"><div class=\"profile__wrapper\"><div class=\"profile__photo\"> <img src=\"./static/img/me.png\"></div><div class=\"profile__info--top\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileName\"></span> <span id=\"profileNameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileLocation\"></span> <span id=\"profileLocationContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileNickname\"></span> <span id=\"profileNicknameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileWorkingAt\"></span> <span id=\"profileWorkingAtContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileRole\"></span> <span id=\"profileRoleContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileEducation\"></span> <span id=\"profileEducationContent\"></span></div></div></div><div class=\"profile__info--bottom\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileMoreStuff\"></span> <span id=\"profileMoreStuffContent\"></span></div></div></div>";
+    this.ui = "<div class=\"content__profile\"><div class=\"profile__info--top\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileName\"></span> <span id=\"profileNameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileNickname\"></span> <span id=\"profileNicknameContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileEducation\"></span> <span id=\"profileEducationContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileLocation\"></span> <span id=\"profileLocationContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"profileMoreStuff\"></span> <span id=\"profileMoreStuffContent\"></span></div></div></div>";
   }
 
   _createClass(Profile, [{
@@ -195,11 +179,7 @@ var Profile = /*#__PURE__*/function () {
       document.getElementById('windowTitle').innerHTML = navbar$1.navbarProfile[lang];
 
       for (var k in profile$1) {
-        if (k.includes('Content')) {
-          document.getElementById(k).innerText = profile$1[k][lang];
-        } else {
-          document.getElementById(k).innerText = "".concat(profile$1[k][lang], ":");
-        }
+        document.getElementById(k).innerText = profile$1[k][lang];
       }
     }
   }]);

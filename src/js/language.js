@@ -4,20 +4,20 @@ export const profile = {
         'es': 'NOMBRE'
     },
     'profileNameContent': {
-        'en': 'RUBÉN ANDREŚ MENDOZA BURGOS',
-        'es': 'RUBÉN ANDREŚ MENDOZA BURGOS'
+        'en': 'RUBÉN ANDRÉS MENDOZA BURGOS',
+        'es': 'RUBÉN ANDRÉS MENDOZA BURGOS'
     },
     'profileLocation': {
         'en': 'LOCATION',
         'es': 'LOCALIZACIÓN'
     },
     'profileLocationContent': {
-        'en': 'QUERÉTARO',
-        'es': 'QUERÉTARO'
+        'en': 'QUERETARO, MEXICO',
+        'es': 'QUERÉTARO, MÉXICO'
     },
     'profileNickname': {
-        'en': 'NICKNAME',
-        'es': 'APODO'
+        'en': 'PSEUDONYM',
+        'es': 'PSEUDÓNIMO'
     },
     'profileNicknameContent': {
         'en': 'RAMB MEMBURG',
@@ -30,22 +30,6 @@ export const profile = {
     'profileEducationContent': {
         'en': 'AUTONOMOUS UNIVERSITY OF QUERÉTARO',
         'es': 'UNIVERSIDAD AUTÓNOMA DE QUERÉTARO'
-    },
-    'profileWorkingAt': {
-        'en': 'WORKING AT',
-        'es': 'TRABAJANDO EN'
-    },
-    'profileWorkingAtContent': {
-        'en': 'DELOITTE',
-        'es': 'DELOITTE'
-    },
-    'profileRole': {
-        'en': 'ROLE',
-        'es': 'ROL'
-    },
-    'profileRoleContent': {
-        'en': 'SYSTEMS ENGINEERING ANALYST',
-        'es': 'ANALISTA DE INGENIERÍA EN SISTEMAS'
     },
     'profileMoreStuff': {
         'en': 'MORE STUFF',
@@ -107,7 +91,7 @@ export const experience = {
     },
     'experienceDesc-2': {
         'en': 'I LEARNT AUTOMATION TESTING TOOLS SUCH AS SELENIUM AND APPIUM, ISTQB PRINCIPLES, ORAL SPEECH AND COMMUNICATION TECHNIQUES; AND DEVELOPMENT METHODOLOGIES SUCH AS WATERFALL AND SCRUM.',
-        'es': 'APRENDÍ HERRAMIENTAS DE PRUEBA DE AUTOMATIZACIÓN COMO SELENIO Y APPIUM, PRINCIPIOS ISTQB, TÉCNICAS DE HABLA ORAL Y COMUNICACIÓN; Y METODOLOGÍAS DE DESARROLLO COMO WATERFALL Y SCRUM.'
+        'es': 'APRENDÍ HERRAMIENTAS DE PRUEBA DE AUTOMATIZACIÓN COMO SELENIUM Y APPIUM, PRINCIPIOS ISTQB, TÉCNICAS DE HABLA ORAL Y COMUNICACIÓN; Y METODOLOGÍAS DE DESARROLLO COMO WATERFALL Y SCRUM.'
     },
     'experienceCompany-3': {
         'en': 'UNAM-LAVIS',
