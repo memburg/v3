@@ -129,7 +129,7 @@ body
             .info__line + .info__line
                 margin-top: 0.7rem
 
-        .content__experience
+        .content__experience, .content__projects
             height: 100%
             width: 100%
             display: flex
@@ -137,21 +137,22 @@ body
             justify-content: space-between
             padding: 1.5rem 0.5rem
 
-            .experice__company
+            .experice__company, .project__name
                 width: 100%
                 height: fit-content
                 font-size: 1.5rem
                 color: #0257b8
 
-            span[id^="experienceDate"]
+            span[id^="experienceDate"], span[id^="projectLang"]
                 font-size: 1.1rem
                 color: #0f0f0f
 
-            .experice__role
+            .experice__role, .project__repo a, .project__repo a:visited
                 font-size: 1.2rem
                 color: #414141
+                text-decoration: none
 
-            .experice__desc
+            .experice__desc, .project__desc
                 margin-top: 0.5rem
                 font-size: 1.1rem
                 color: #161616

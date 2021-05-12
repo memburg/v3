@@ -126,7 +126,7 @@ body {
 .window .window__content .content__profile .info__line + .info__line {
   margin-top: 0.7rem;
 }
-.window .window__content .content__experience {
+.window .window__content .content__experience, .window .window__content .content__projects {
   height: 100%;
   width: 100%;
   display: flex;
@@ -134,21 +134,22 @@ body {
   justify-content: space-between;
   padding: 1.5rem 0.5rem;
 }
-.window .window__content .content__experience .experice__company {
+.window .window__content .content__experience .experice__company, .window .window__content .content__experience .project__name, .window .window__content .content__projects .experice__company, .window .window__content .content__projects .project__name {
   width: 100%;
   height: fit-content;
   font-size: 1.5rem;
   color: #0257b8;
 }
-.window .window__content .content__experience span[id^=experienceDate] {
+.window .window__content .content__experience span[id^=experienceDate], .window .window__content .content__experience span[id^=projectLang], .window .window__content .content__projects span[id^=experienceDate], .window .window__content .content__projects span[id^=projectLang] {
   font-size: 1.1rem;
   color: #0f0f0f;
 }
-.window .window__content .content__experience .experice__role {
+.window .window__content .content__experience .experice__role, .window .window__content .content__experience .project__repo a, .window .window__content .content__experience .project__repo a:visited, .window .window__content .content__projects .experice__role, .window .window__content .content__projects .project__repo a, .window .window__content .content__projects .project__repo a:visited {
   font-size: 1.2rem;
   color: #414141;
+  text-decoration: none;
 }
-.window .window__content .content__experience .experice__desc {
+.window .window__content .content__experience .experice__desc, .window .window__content .content__experience .project__desc, .window .window__content .content__projects .experice__desc, .window .window__content .content__projects .project__desc {
   margin-top: 0.5rem;
   font-size: 1.1rem;
   color: #161616;

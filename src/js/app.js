@@ -1,10 +1,12 @@
 import Navbar from './navbar';
 import Profile from './profile';
 import Experience from "./experience";
+import Projects from './projects';
 
 const navbar = new Navbar();
 const profile = new Profile();
 const experience = new Experience();
+const projects = new Projects();
 
 // First render UI
 navbar.renderUI();
@@ -26,30 +28,11 @@ navbar.tabs.experience.addEventListener('click', () => {
 });
 
 navbar.tabs.projects.addEventListener('click', () => {
-    profile.renderUI();
-    profile.renderData();
+    projects.renderUI();
+    projects.renderData();
 });
 
 navbar.tabs.contact.addEventListener('click', () => {
-    experience.renderUI();
-    experience.renderData();
+    projects.renderUI();
+    projects.renderData();
 });
-
-// Then render data based on selected language
-// switch (localStorage.getItem('lang')) {
-//     case 'en':
-//         navbar.renderData('en');
-//         experience.renderData('en')
-//         profile.renderData('en');
-//         break;
-//     case 'es':
-//         navbar.renderData('es');
-//         experience.renderData('es')
-//         profile.renderData('es');
-//         break;
-//     default:
-//         navbar.renderData('en');
-//         experience.renderData('en')
-//         profile.renderData('en');
-//         break;
-// }

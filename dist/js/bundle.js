@@ -116,6 +116,20 @@ var experience$1 = {
     'es': 'COMO PARTE DE MI SERVICIO SOCIAL Y DE VOLUNTARIADO, TUVE LA OPORTUNIDAD DE DESARROLLAR SOFTWARE DE VISUALIZACIÓN 3D Y PROCESAMIENTO DE IMÁGENES RELACIONADO CON NEUROCIENCIA Y BIOMECÁNICA USANDO TECNOLOGÍAS COMO UNITY, MATLAB, HTML, CSS Y JAVASCRIPT.'
   }
 };
+var projects$1 = {
+  'projectDesc-1': {
+    'en': 'CHEEMS IS A PROGRAMMING LANGUAGE STILL UNDER CONSTRUCTION AND WRITTEN IN JAVASCRIPT. JUST FOR THE MEMES, IT IS A MEMELANG.',
+    'es': 'CHEEMS ES UN LENGUAJE DE PROGRAMACIÓN AÚN EN CONSTRUCCIÓN Y ESCRITO EN JAVASCRIPT. SOLO PARA LOS MEMES, ES UN MEMELANG.'
+  },
+  'projectDesc-2': {
+    'en': 'DUOLINGO KILLER IS AN AUTOMATION WORK CREATED TO BEAT DUOLINGO. WRITTEN IN PYTHON, USING SELENIUM AND THE PAGE OBJECT MODEL DESIGN PATTERN.',
+    'es': 'DUOLINGO KILLER ES UN TRABAJO DE AUTOMATIZACIÓN CREADO PARA VENCER A DUOLINGO. ESCRITO EN PYTHON, UTILIZANDO SELENIUM Y EL PATRÓN DE DISEÑO PAGE OBJECT MODEL.'
+  },
+  'projectDesc-3': {
+    'en': 'A SET OF IMAGE PROCESSING ALGORITHMS WRITTEN IN PURE JAVASCRIPT, THESE ALGORITHMS ARE MEANT TO RUN ON WEB BROWSER SINCE WEB CANVAS IS IMPLEMENTED.',
+    'es': 'UN CONJUNTO DE ALGORITMOS DE PROCESAMIENTO DE IMÁGENES ESCRITOS EN JAVASCRIPT PURO, ESTOS ALGORITMOS ESTÁN PENSADOS PARA EJECUTARSE EN EL NAVEGADOR WEB PORQUE QUE SE IMPLEMENTA EL WEB CANVAS.'
+  }
+};
 
 var Navbar = /*#__PURE__*/function () {
   function Navbar() {
@@ -216,9 +230,39 @@ var Experience = /*#__PURE__*/function () {
   return Experience;
 }();
 
+var Projects = /*#__PURE__*/function () {
+  function Projects() {
+    _classCallCheck(this, Projects);
+
+    this.bar = "<div class=\"window__close\"></div><div class=\"window__title\"><span id=\"windowTitle\"></span></div>";
+    this.ui = "<div class=\"content__projects\"><div class=\"project__container\"><div class=\"project__name\">CHEEMS LANG <span id=\"projectLang-1\">JAVASCRIPT</span></div><div class=\"project__repo\"><span id=\"projectRepo-1\"><a href=\"https://github.com/cheems-lang/cheems\">GITHUB</a></span></div><div class=\"project__desc\"><span id=\"projectDesc-1\"></span></div></div><div class=\"project__container\"><div class=\"project__name\">DUOLINGO KILLER <span id=\"projectLang-1\">PYTHON</span></div><div class=\"project__repo\"><span id=\"projectRepo-2\"><a href=\"https://github.com/memburg/duolingo-killer\">GITHUB</a></span></div><div class=\"project__desc\"><span id=\"projectDesc-2\"></span></div></div><div class=\"project__container\"><div class=\"project__name\">IMAGE PROCESSING ALGORITHMS <span id=\"projectLang-1\">JAVASCRIPT</span></div><div class=\"project__repo\"><span id=\"projectRepo-3\"><a href=\"https://github.com/memburg/image-processing-algorithms\">GITHUB</a></span></div><div class=\"project__desc\"><span id=\"projectDesc-3\"></span></div></div></div>";
+  }
+
+  _createClass(Projects, [{
+    key: "renderUI",
+    value: function renderUI() {
+      document.getElementById('windowBar').innerHTML = this.bar;
+      document.getElementById('windowContent').innerHTML = this.ui;
+    }
+  }, {
+    key: "renderData",
+    value: function renderData() {
+      var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+      document.getElementById('windowTitle').innerHTML = navbar$1.navbarProjects[lang];
+
+      for (var k in projects$1) {
+        document.getElementById(k).innerText = projects$1[k][lang];
+      }
+    }
+  }]);
+
+  return Projects;
+}();
+
 var navbar = new Navbar();
 var profile = new Profile();
-var experience = new Experience(); // First render UI
+var experience = new Experience();
+var projects = new Projects(); // First render UI
 
 navbar.renderUI();
 profile.renderUI();
@@ -235,27 +279,10 @@ navbar.tabs.experience.addEventListener('click', function () {
   experience.renderData();
 });
 navbar.tabs.projects.addEventListener('click', function () {
-  profile.renderUI();
-  profile.renderData();
+  projects.renderUI();
+  projects.renderData();
 });
 navbar.tabs.contact.addEventListener('click', function () {
-  experience.renderUI();
-  experience.renderData();
-}); // Then render data based on selected language
-// switch (localStorage.getItem('lang')) {
-//     case 'en':
-//         navbar.renderData('en');
-//         experience.renderData('en')
-//         profile.renderData('en');
-//         break;
-//     case 'es':
-//         navbar.renderData('es');
-//         experience.renderData('es')
-//         profile.renderData('es');
-//         break;
-//     default:
-//         navbar.renderData('en');
-//         experience.renderData('en')
-//         profile.renderData('en');
-//         break;
-// }
+  projects.renderUI();
+  projects.renderData();
+});
