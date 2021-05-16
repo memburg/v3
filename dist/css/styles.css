@@ -98,19 +98,19 @@ body {
   height: calc(100% - 5rem);
   padding: 0.8rem;
 }
-.window .window__content .content__profile {
+.window .window__content .content__profile, .window .window__content .content__contact {
   width: 100%;
   height: 100%;
   padding: 1.5rem 0.5rem;
   display: flex;
   justify-content: space-between;
 }
-.window .window__content .content__profile .profile__info--top {
+.window .window__content .content__profile .profile__info--top, .window .window__content .content__profile .contact__info--top, .window .window__content .content__contact .profile__info--top, .window .window__content .content__contact .contact__info--top {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.window .window__content .content__profile .info__line {
+.window .window__content .content__profile .info__line, .window .window__content .content__contact .info__line {
   width: 100%;
   color: #161616;
   text-align: justify;
@@ -118,12 +118,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-.window .window__content .content__profile .info__line span.info__line--property {
+.window .window__content .content__profile .info__line span.info__line--property, .window .window__content .content__contact .info__line span.info__line--property {
   color: #0257b8;
   font-size: 1.5rem;
   margin-bottom: 0.3rem;
 }
-.window .window__content .content__profile .info__line + .info__line {
+.window .window__content .content__profile .info__line + .info__line, .window .window__content .content__contact .info__line + .info__line {
   margin-top: 0.7rem;
 }
 .window .window__content .content__experience, .window .window__content .content__projects {

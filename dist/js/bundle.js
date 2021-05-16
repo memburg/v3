@@ -130,6 +130,48 @@ var projects$1 = {
     'es': 'UN CONJUNTO DE ALGORITMOS DE PROCESAMIENTO DE IMÁGENES ESCRITOS EN JAVASCRIPT PURO, ESTOS ALGORITMOS ESTÁN PENSADOS PARA EJECUTARSE EN EL NAVEGADOR WEB PORQUE QUE SE IMPLEMENTA EL WEB CANVAS.'
   }
 };
+var contact$1 = {
+  'contactMail': {
+    'en': 'MAIL',
+    'es': 'CORREO'
+  },
+  'contactMailContent': {
+    'en': 'HEISRAMBY[AT]GMAIL.COM',
+    'es': 'HEISRAMBY[AT]GMAIL.COM'
+  },
+  'contactGitHub': {
+    'en': 'GITHUB',
+    'es': 'GITHUB'
+  },
+  'contactGitHubContent': {
+    'en': 'MEMBURG',
+    'es': 'MEMBURG'
+  },
+  'contactGitLab': {
+    'en': 'GITLAB',
+    'es': 'GITLAB'
+  },
+  'contactGitLabContent': {
+    'en': 'MEMBURG',
+    'es': 'MEMBURG'
+  },
+  'contactLinkedIn': {
+    'en': 'LINKEDIN',
+    'es': 'LINKEDIN'
+  },
+  'contactLinkedInContent': {
+    'en': 'MEMBURG',
+    'es': 'MEMBURG'
+  },
+  'contactTwitter': {
+    'en': 'TWITTER',
+    'es': 'TWITTER'
+  },
+  'contactTwitterContent': {
+    'en': '@MEMBURG',
+    'es': '@MEMBURG'
+  }
+};
 
 var Navbar = /*#__PURE__*/function () {
   function Navbar() {
@@ -259,10 +301,40 @@ var Projects = /*#__PURE__*/function () {
   return Projects;
 }();
 
+var Contact = /*#__PURE__*/function () {
+  function Contact() {
+    _classCallCheck(this, Contact);
+
+    this.bar = "<div class=\"window__close\"></div><div class=\"window__title\"><span id=\"windowTitle\"></span></div>";
+    this.ui = "<div class=\"content__contact\"><div class=\"contact__info--top\"><div class=\"info__line\"> <span class=\"info__line--property\" id=\"contactMail\"></span> <span id=\"contactMailContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"contactGitHub\"></span> <span id=\"contactGitHubContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"contactGitLab\"></span> <span id=\"contactGitLabContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"contactLinkedIn\"></span> <span id=\"contactLinkedInContent\"></span></div><div class=\"info__line\"> <span class=\"info__line--property\" id=\"contactTwitter\"></span> <span id=\"contactTwitterContent\"></span></div></div></div>";
+  }
+
+  _createClass(Contact, [{
+    key: "renderUI",
+    value: function renderUI() {
+      document.getElementById('windowBar').innerHTML = this.bar;
+      document.getElementById('windowContent').innerHTML = this.ui;
+    }
+  }, {
+    key: "renderData",
+    value: function renderData() {
+      var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+      document.getElementById('windowTitle').innerHTML = navbar$1.navbarContact[lang];
+
+      for (var k in contact$1) {
+        document.getElementById(k).innerText = contact$1[k][lang];
+      }
+    }
+  }]);
+
+  return Contact;
+}();
+
 var navbar = new Navbar();
 var profile = new Profile();
 var experience = new Experience();
-var projects = new Projects(); // First render UI
+var projects = new Projects();
+var contact = new Contact(); // First render UI
 
 navbar.renderUI();
 profile.renderUI();
@@ -283,6 +355,6 @@ navbar.tabs.projects.addEventListener('click', function () {
   projects.renderData();
 });
 navbar.tabs.contact.addEventListener('click', function () {
-  projects.renderUI();
-  projects.renderData();
+  contact.renderUI();
+  contact.renderData();
 });

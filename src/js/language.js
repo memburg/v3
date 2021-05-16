@@ -125,3 +125,46 @@ export const projects = {
         'es': 'UN CONJUNTO DE ALGORITMOS DE PROCESAMIENTO DE IMÁGENES ESCRITOS EN JAVASCRIPT PURO, ESTOS ALGORITMOS ESTÁN PENSADOS PARA EJECUTARSE EN EL NAVEGADOR WEB PORQUE QUE SE IMPLEMENTA EL WEB CANVAS.'
     }
 }
+
+export const contact = {
+    'contactMail': {
+        'en': 'MAIL',
+        'es': 'CORREO'
+    },
+    'contactMailContent': {
+        'en': 'HEISRAMBY[AT]GMAIL.COM',
+        'es': 'HEISRAMBY[AT]GMAIL.COM'
+    },
+    'contactGitHub': {
+        'en': 'GITHUB',
+        'es': 'GITHUB'
+    },
+    'contactGitHubContent': {
+        'en': 'MEMBURG',
+        'es': 'MEMBURG'
+    },
+    'contactGitLab': {
+        'en': 'GITLAB',
+        'es': 'GITLAB'
+    },
+    'contactGitLabContent': {
+        'en': 'MEMBURG',
+        'es': 'MEMBURG'
+    },
+    'contactLinkedIn': {
+        'en': 'LINKEDIN',
+        'es': 'LINKEDIN'
+    },
+    'contactLinkedInContent': {
+        'en': 'MEMBURG',
+        'es': 'MEMBURG'
+    },
+    'contactTwitter': {
+        'en': 'TWITTER',
+        'es': 'TWITTER'
+    },
+    'contactTwitterContent': {
+        'en': '@MEMBURG',
+        'es': '@MEMBURG'
+    }
+}

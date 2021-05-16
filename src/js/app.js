@@ -2,11 +2,13 @@ import Navbar from './navbar';
 import Profile from './profile';
 import Experience from "./experience";
 import Projects from './projects';
+import Contact from './contact';
 
 const navbar = new Navbar();
 const profile = new Profile();
 const experience = new Experience();
 const projects = new Projects();
+const contact = new Contact();
 
 // First render UI
 navbar.renderUI();
@@ -33,6 +35,6 @@ navbar.tabs.projects.addEventListener('click', () => {
 });
 
 navbar.tabs.contact.addEventListener('click', () => {
-    projects.renderUI();
-    projects.renderData();
+    contact.renderUI();
+    contact.renderData();
 });
