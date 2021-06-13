@@ -14,7 +14,49 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: #eeeeee;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/232/230/447/1920x1080-px-bit-pixel-art-pokemon-wallpaper-preview.jpg");
+  background-position: top;
+  background-size: cover;
+}
+
+.bar {
+  width: 100%;
+  height: 2.3rem;
+  position: relative;
+  padding: 0 6rem;
+  background-color: #00000086;
+  color: #ffffff;
+}
+.bar .bar__clock, .bar .bar__lang {
+  height: 100%;
+  width: fit-content;
+  float: right;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  position: absolute;
+}
+.bar .bar__clock {
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.bar .bar__lang {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.bar .bar__lang span + span {
+  margin-left: 2rem;
+}
+.bar .bar__lang span:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  cursor: pointer;
+  color: #e7e7e7;
 }
 
 .window {
@@ -26,7 +68,7 @@ body {
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  background-color: #cacae7;
+  background-color: #cacae791;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +78,7 @@ body {
   width: 100%;
   height: 3rem;
   border-bottom: 0.4rem solid #000000;
-  background-color: #c785d6;
+  background-color: #c785d694;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -70,7 +112,7 @@ body {
   width: 100%;
   height: 2rem;
   border-bottom: 0.4rem solid #000000;
-  background-color: #cbc4cc;
+  background-color: #cbc4cc79;
   display: inline-flex;
   flex-direction: row;
   align-items: center;

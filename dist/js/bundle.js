@@ -6,6 +6,23 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var Bar = /*#__PURE__*/function () {
+  function Bar() {
+    _classCallCheck(this, Bar);
+
+    this.ui = "<div class=\"bar__clock\"> <span id=\"clock\"></span></div><div class=\"bar__lang\"> <span id=\"en\">EN</span> <span id=\"es\">ES</span></div>";
+  }
+
+  _createClass(Bar, [{
+    key: "renderUI",
+    value: function renderUI() {
+      document.getElementById('bar').innerHTML = this.ui;
+    }
+  }]);
+
+  return Bar;
+}();
+
 var profile$1 = {
   'profileName': {
     'en': 'NAME',
@@ -330,16 +347,60 @@ var Contact = /*#__PURE__*/function () {
   return Contact;
 }();
 
+var bar = new Bar();
 var navbar = new Navbar();
 var profile = new Profile();
 var experience = new Experience();
 var projects = new Projects();
 var contact = new Contact(); // First render UI
 
+bar.renderUI();
 navbar.renderUI();
 profile.renderUI();
 navbar.renderData();
-profile.renderData(); // Set event listeners
+profile.renderData();
+setInterval(function () {
+  var multilangMonths = {
+    'en': {
+      'JAN': 'JAN',
+      'FEB': 'FEB',
+      'MAR': 'MAR',
+      'APR': 'APR',
+      'MAY': 'MAY',
+      'JUN': 'JUN',
+      'JUL': 'JUL',
+      'AUG': 'AUG',
+      'SEP': 'SEP',
+      'OCT': 'OCT',
+      'NOV': 'NOV',
+      'DEC': 'DEC'
+    },
+    'es': {
+      'JAN': 'ENE',
+      'FEB': 'FEB',
+      'MAR': 'MAR',
+      'APR': 'ABR',
+      'MAY': 'MAY',
+      'JUN': 'JUN',
+      'JUL': 'JUL',
+      'AUG': 'AGO',
+      'SEP': 'SEP',
+      'OCT': 'OCT',
+      'NOV': 'NOV',
+      'DEC': 'DIC'
+    }
+  };
+  var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
+  var date = new Date().toLocaleString('en-UK', {
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).replaceAll(',', '').toUpperCase();
+  var month = date.split(' ')[1];
+  var clock = document.getElementById('clock');
+  clock.innerText = date.replace(month, multilangMonths[lang][month]);
+}, 1000); // Set event listeners
 
 navbar.setListeners();
 navbar.tabs.profile.addEventListener('click', function () {

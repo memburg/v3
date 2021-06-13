@@ -4,6 +4,7 @@
 $delimiter-border: 0.4rem solid #000000
 $button-border: 0.2rem solid #000000
 $button-size: 1.5rem
+$background-url: url("https://c4.wallpaperflare.com/wallpaper/232/230/447/1920x1080-px-bit-pixel-art-pokemon-wallpaper-preview.jpg")
 
 *
     margin: 0
@@ -18,7 +19,49 @@ body
     width: 100%
     height: 100%
     position: fixed
-    background-color: #eeeeee
+    //background-color: #eeeeee
+    background-image: $background-url
+    background-position: top
+    background-size    : cover
+
+.bar
+    width: 100%
+    height: 2.3rem
+    position: relative
+    padding: 0 6rem
+    background-color: #00000086
+    color: #ffffff
+
+    .bar__clock, .bar__lang
+        height: 100%
+        width: fit-content
+        float: right
+        text-align: center
+        font-size: 1.25rem
+        line-height: 2rem
+        position: absolute
+
+    .bar__clock
+        top: 50%
+        left:0
+        right: 0
+        transform: translateY(-50%)
+        margin-left: auto
+        margin-right: auto
+
+    .bar__lang
+        top: 50%
+        right: 5%
+        transform: translateY(-50%)
+
+        span + span
+            margin-left: 2rem
+
+        span:hover
+            text-decoration: underline
+            text-underline-position: below
+            cursor: pointer
+            color: #e7e7e7
 
 .window
     width: 40%
@@ -29,7 +72,7 @@ body
     left:0
     right: 0
     transform: translateY(-50%)
-    background-color: #cacae7
+    background-color: #cacae791
     position: absolute
     margin-left: auto
     margin-right: auto
@@ -39,7 +82,7 @@ body
         width: 100%
         height: 3rem
         border-bottom: $delimiter-border
-        background-color: #c785d6
+        background-color: #c785d694
         display: inline-flex
         flex-direction: row
         align-items: center
@@ -73,7 +116,7 @@ body
         width: 100%
         height: 2rem
         border-bottom: $delimiter-border
-        background-color: #cbc4cc
+        background-color: #cbc4cc79
         display: inline-flex
         flex-direction: row
         align-items: center
