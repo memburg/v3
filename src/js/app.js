@@ -22,48 +22,18 @@ profile.renderData();
 
 setInterval(() => {
     const multilangMonths = {
-        'en': {
-            'JAN': 'JAN',
-            'FEB': 'FEB',
-            'MAR': 'MAR',
-            'APR': 'APR',
-            'MAY': 'MAY',
-            'JUN': 'JUN',
-            'JUL': 'JUL',
-            'AUG': 'AUG',
-            'SEP': 'SEP',
-            'OCT': 'OCT',
-            'NOV': 'NOV',
-            'DEC': 'DEC'
-        },
-        'es': {
-            'JAN': 'ENE',
-            'FEB': 'FEB',
-            'MAR': 'MAR',
-            'APR': 'ABR',
-            'MAY': 'MAY',
-            'JUN': 'JUN',
-            'JUL': 'JUL',
-            'AUG': 'AGO',
-            'SEP': 'SEP',
-            'OCT': 'OCT',
-            'NOV': 'NOV',
-            'DEC': 'DIC'
-        }
+        'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
     };
 
     const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-    const date = new Date().toLocaleString('en-UK', {
-        day: '2-digit',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit',
-    }).replaceAll(',', '').toUpperCase();
+    const date = new Date();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
 
-    const month = date.split(' ')[1];
-    const clock = document.getElementById('clock');
-
-    clock.innerText = date.replace(month, multilangMonths[lang][month]);
+    clock.innerText = `${day} ${multilangMonths[lang][month]} ${hours}:${minutes}`;
 }, 1000);
 
 // Set event listeners

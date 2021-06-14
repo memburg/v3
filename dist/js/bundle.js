@@ -361,45 +361,16 @@ navbar.renderData();
 profile.renderData();
 setInterval(function () {
   var multilangMonths = {
-    'en': {
-      'JAN': 'JAN',
-      'FEB': 'FEB',
-      'MAR': 'MAR',
-      'APR': 'APR',
-      'MAY': 'MAY',
-      'JUN': 'JUN',
-      'JUL': 'JUL',
-      'AUG': 'AUG',
-      'SEP': 'SEP',
-      'OCT': 'OCT',
-      'NOV': 'NOV',
-      'DEC': 'DEC'
-    },
-    'es': {
-      'JAN': 'ENE',
-      'FEB': 'FEB',
-      'MAR': 'MAR',
-      'APR': 'ABR',
-      'MAY': 'MAY',
-      'JUN': 'JUN',
-      'JUL': 'JUL',
-      'AUG': 'AGO',
-      'SEP': 'SEP',
-      'OCT': 'OCT',
-      'NOV': 'NOV',
-      'DEC': 'DIC'
-    }
+    'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+    'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
   };
   var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-  var date = new Date().toLocaleString('en-UK', {
-    day: '2-digit',
-    month: 'short',
-    hour: '2-digit',
-    minute: '2-digit'
-  }).replaceAll(',', '').toUpperCase();
-  var month = date.split(' ')[1];
-  var clock = document.getElementById('clock');
-  clock.innerText = date.replace(month, multilangMonths[lang][month]);
+  var date = new Date();
+  var month = date.getMonth();
+  var day = date.getDate();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  clock.innerText = "".concat(day, " ").concat(multilangMonths[lang][month], " ").concat(hours, ":").concat(minutes);
 }, 1000); // Set event listeners
 
 navbar.setListeners();
