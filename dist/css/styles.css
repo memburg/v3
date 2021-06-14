@@ -12,11 +12,8 @@ html {
 body {
   font-family: "Share Tech Mono", sans-serif;
   width: 100%;
-  height: 100%;
-  position: fixed;
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/232/230/447/1920x1080-px-bit-pixel-art-pokemon-wallpaper-preview.jpg");
-  background-position: top;
-  background-size: cover;
+  height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
 }
 
 .bar {
@@ -24,7 +21,7 @@ body {
   height: 2.3rem;
   position: relative;
   padding: 0 6rem;
-  background-color: #00000086;
+  background-color: #00000077;
   color: #ffffff;
 }
 .bar .bar__clock, .bar .bar__lang {
@@ -68,7 +65,7 @@ body {
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  background-color: #cacae791;
+  background-color: #cacae779;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -78,7 +75,7 @@ body {
   width: 100%;
   height: 3rem;
   border-bottom: 0.4rem solid #000000;
-  background-color: #c785d694;
+  background-color: #c785d679;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -112,7 +109,7 @@ body {
   width: 100%;
   height: 2rem;
   border-bottom: 0.4rem solid #000000;
-  background-color: #cbc4cc79;
+  background-color: #cbc4cc;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
