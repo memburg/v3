@@ -18,6 +18,17 @@ const projects = new Projects();
 const contact = new Contact();
 
 /**
+ * Enviroment variables (local storage)
+ */
+if (localStorage.getItem('lang') === null) {
+    localStorage.setItem('lang', 'en');
+}
+
+if (localStorage.getItem('screen') === null) {
+    localStorage.setItem('screen', 'profile');
+}
+
+/**
  * Render UI and data
  */
 bar.renderUI();

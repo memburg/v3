@@ -385,8 +385,20 @@ var experience = new Experience();
 var projects = new Projects();
 var contact = new Contact();
 /**
+ * Enviroment variables (local storage)
+ */
+
+if (localStorage.getItem('lang') === null) {
+  localStorage.setItem('lang', 'en');
+}
+
+if (localStorage.getItem('screen') === null) {
+  localStorage.setItem('screen', 'profile');
+}
+/**
  * Render UI and data
  */
+
 
 bar.renderUI();
 navbar.renderUI();
