@@ -4,7 +4,12 @@ import Profile from './profile';
 import Experience from "./experience";
 import Projects from './projects';
 import Contact from './contact';
+import { multilangMonths } from './language';
+import { SCREEN, LANG } from './environment';
 
+/**
+ * Sections and components
+ */
 const bar = new Bar();
 const navbar = new Navbar();
 const profile = new Profile();
@@ -12,49 +17,92 @@ const experience = new Experience();
 const projects = new Projects();
 const contact = new Contact();
 
-// First render UI
+/**
+ * Render UI and data
+ */
 bar.renderUI();
 navbar.renderUI();
-profile.renderUI();
-
 navbar.renderData();
-profile.renderData();
 
+// Render screen saved in LS
+renderScreen();
+
+/**
+ * Set clock interval
+ */
 setInterval(() => {
-    const multilangMonths = {
-        'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-        'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
-    };
-
-    const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
     const date = new Date();
     const month = date.getMonth();
     const day = date.getDate();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-
-    clock.innerText = `${day} ${multilangMonths[lang][month]} ${hours}:${minutes}`;
+    const clock = document.getElementById('clock');
+    clock.innerText = `${day} ${multilangMonths[LANG][month]} ${hours}:${minutes}`;
 }, 1000);
 
-// Set event listeners
+/**
+ * Set event listeners
+ */
+bar.setListeners();
 navbar.setListeners();
+
 navbar.tabs.profile.addEventListener('click', () => {
     profile.renderUI();
     profile.renderData();
+    localStorage.setItem('screen', 'profile');
 });
 
 navbar.tabs.experience.addEventListener('click', () => {
     experience.renderUI();
     experience.renderData();
+    localStorage.setItem('screen', 'experience');
 });
 
 navbar.tabs.projects.addEventListener('click', () => {
     projects.renderUI();
     projects.renderData();
+    localStorage.setItem('screen', 'projects');
 });
 
 navbar.tabs.contact.addEventListener('click', () => {
     contact.renderUI();
     contact.renderData();
+    localStorage.setItem('screen', 'contact');
 });
 
+
+bar.languages.en.addEventListener('click', () => {
+    localStorage.setItem('lang', 'en');
+    navbar.renderData();
+    renderScreen();
+});
+
+bar.languages.es.addEventListener('click', () => {
+    localStorage.setItem('lang', 'es');
+    navbar.renderData();
+    renderScreen();
+});
+
+function renderScreen() {
+    switch (localStorage.getItem('screen')) {
+        case 'profile':
+            profile.renderUI();
+            profile.renderData();
+            break;
+
+        case 'experience':
+            experience.renderUI();
+            experience.renderData();
+            break;
+
+        case 'projects':
+            projects.renderUI();
+            projects.renderData();
+            break;
+
+        case 'contact':
+            contact.renderUI();
+            contact.renderData();
+            break;
+    }
+}

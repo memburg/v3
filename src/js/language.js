@@ -164,7 +164,12 @@ export const contact = {
         'es': 'TWITTER'
     },
     'contactTwitterContent': {
-        'en': '@MEMBURG',
-        'es': '@MEMBURG'
+        'en': '[AT]MEMBURG',
+        'es': '[AT]MEMBURG'
     }
+}
+
+export const multilangMonths = {
+    'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+    'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
 }

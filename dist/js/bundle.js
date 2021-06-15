@@ -11,9 +11,19 @@ var Bar = /*#__PURE__*/function () {
     _classCallCheck(this, Bar);
 
     this.ui = "<div class=\"bar__clock\"> <span id=\"clock\"></span></div><div class=\"bar__lang\"> <span id=\"en\">EN</span> <span id=\"es\">ES</span></div>";
+    this.languages = {
+      en: null,
+      es: null
+    };
   }
 
   _createClass(Bar, [{
+    key: "setListeners",
+    value: function setListeners() {
+      this.languages.en = document.getElementById('en');
+      this.languages.es = document.getElementById('es');
+    }
+  }, {
     key: "renderUI",
     value: function renderUI() {
       document.getElementById('bar').innerHTML = this.ui;
@@ -185,9 +195,13 @@ var contact$1 = {
     'es': 'TWITTER'
   },
   'contactTwitterContent': {
-    'en': '@MEMBURG',
-    'es': '@MEMBURG'
+    'en': '[AT]MEMBURG',
+    'es': '[AT]MEMBURG'
   }
+};
+var multilangMonths = {
+  'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+  'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
 };
 
 var Navbar = /*#__PURE__*/function () {
@@ -346,47 +360,109 @@ var Contact = /*#__PURE__*/function () {
 
   return Contact;
 }();
+/**
+ * Environment variables (Local Storage)
+ */
+
+
+var LANG = localStorage.getItem('lang') || function () {
+  localStorage.setItem('lang', 'en');
+  return 'en';
+}();
+
+localStorage.getItem('screen') || function () {
+  localStorage.setItem('screen', 'portfolio');
+  return 'portfolio';
+}();
+/**
+ * Sections and components
+ */
 
 var bar = new Bar();
 var navbar = new Navbar();
 var profile = new Profile();
 var experience = new Experience();
 var projects = new Projects();
-var contact = new Contact(); // First render UI
+var contact = new Contact();
+/**
+ * Render UI and data
+ */
 
 bar.renderUI();
 navbar.renderUI();
-profile.renderUI();
-navbar.renderData();
-profile.renderData();
+navbar.renderData(); // Render screen saved in LS
+
+renderScreen();
+/**
+ * Set clock interval
+ */
+
 setInterval(function () {
-  var multilangMonths = {
-    'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-    'es': ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
-  };
-  var lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
   var date = new Date();
   var month = date.getMonth();
   var day = date.getDate();
   var hours = date.getHours();
   var minutes = date.getMinutes();
-  clock.innerText = "".concat(day, " ").concat(multilangMonths[lang][month], " ").concat(hours, ":").concat(minutes);
-}, 1000); // Set event listeners
+  var clock = document.getElementById('clock');
+  clock.innerText = "".concat(day, " ").concat(multilangMonths[LANG][month], " ").concat(hours, ":").concat(minutes);
+}, 1000);
+/**
+ * Set event listeners
+ */
 
+bar.setListeners();
 navbar.setListeners();
 navbar.tabs.profile.addEventListener('click', function () {
   profile.renderUI();
   profile.renderData();
+  localStorage.setItem('screen', 'profile');
 });
 navbar.tabs.experience.addEventListener('click', function () {
   experience.renderUI();
   experience.renderData();
+  localStorage.setItem('screen', 'experience');
 });
 navbar.tabs.projects.addEventListener('click', function () {
   projects.renderUI();
   projects.renderData();
+  localStorage.setItem('screen', 'projects');
 });
 navbar.tabs.contact.addEventListener('click', function () {
   contact.renderUI();
   contact.renderData();
+  localStorage.setItem('screen', 'contact');
 });
+bar.languages.en.addEventListener('click', function () {
+  localStorage.setItem('lang', 'en');
+  navbar.renderData();
+  renderScreen();
+});
+bar.languages.es.addEventListener('click', function () {
+  localStorage.setItem('lang', 'es');
+  navbar.renderData();
+  renderScreen();
+});
+
+function renderScreen() {
+  switch (localStorage.getItem('screen')) {
+    case 'profile':
+      profile.renderUI();
+      profile.renderData();
+      break;
+
+    case 'experience':
+      experience.renderUI();
+      experience.renderData();
+      break;
+
+    case 'projects':
+      projects.renderUI();
+      projects.renderData();
+      break;
+
+    case 'contact':
+      contact.renderUI();
+      contact.renderData();
+      break;
+  }
+}
