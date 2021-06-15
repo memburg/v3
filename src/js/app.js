@@ -20,11 +20,11 @@ const contact = new Contact();
 /**
  * Enviroment variables (local storage)
  */
-if (localStorage.getItem('lang') === null) {
+if (localStorage.getItem('lang') === null || !['en', 'es'].includes(localStorage.getItem('lang'))) {
     localStorage.setItem('lang', 'en');
 }
 
-if (localStorage.getItem('screen') === null) {
+if (localStorage.getItem('screen') === null || !['profile', 'experience', 'projects', 'contact'].includes(localStorage.getItem('screen'))) {
     localStorage.setItem('screen', 'profile');
 }
 
