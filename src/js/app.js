@@ -49,7 +49,7 @@ setInterval(() => {
     const minutes = date.getMinutes();
     const clock = document.getElementById('clock');
     clock.innerText = `${day} ${multilangMonths[LANG][month]} ${hours}:${minutes}`;
-}, 1000);
+}, 500);
 
 /**
  * Set event listeners

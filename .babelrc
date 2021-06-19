@@ -7,6 +7,14 @@
                     "esmodules": false
                 }
             }
+        ],
+        [
+            "minify",
+            {
+                "evaluate": false,
+                "mangle": true,
+                "removeConsole": true
+            }
         ]
     ]
 }
