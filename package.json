@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "rollup -c && babel ./src/bundle.js --out-file ./dist/js/bundle.js",
-    "sassify": "sass --watch ./src/sass/styles.sass ./dist/css/styles.css"
+    "sassify": "sass --watch ./src/sass/styles.sass ./dist/css/styles.css --style compressed"
   },
   "author": "Ramb Memburg",
   "license": "MIT",
