@@ -48,7 +48,7 @@ setInterval(() => {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const clock = document.getElementById('clock');
-    clock.innerText = `${day} ${multilangMonths[LANG][month]} ${hours}:${minutes}`;
+    clock.innerText = `${day} ${multilangMonths[LANG][month]} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
 }, 500);
 
 /**
