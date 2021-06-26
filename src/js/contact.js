@@ -1,4 +1,5 @@
 import { contact, navbar } from './language';
+import { LANG, LANGUAGES } from './environment';
 
 export default class Contact {
     constructor() {
@@ -12,12 +13,14 @@ export default class Contact {
     }
 
     renderData() {
-        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-
-        document.getElementById('windowTitle').innerHTML = navbar.navbarContact[lang];
+        document.getElementById('windowTitle').innerHTML = navbar.navbarContact[LANGUAGES.includes(
+            localStorage.getItem('lang')
+        ) ? localStorage.getItem('lang') : 'en'];
 
         for (const k in contact) {
-            document.getElementById(k).innerText = contact[k][lang];
+            document.getElementById(k).innerText = contact[k][LANGUAGES.includes(
+                localStorage.getItem('lang')
+            ) ? localStorage.getItem('lang') : 'en'];
         }
     }
 }

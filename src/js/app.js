@@ -5,7 +5,7 @@ import Experience from "./experience";
 import Projects from './projects';
 import Contact from './contact';
 import { multilangMonths } from './language';
-import { SCREEN, LANG } from './environment';
+import { LANGUAGES, SCREENS } from './environment';
 
 /**
  * Sections and components
@@ -20,11 +20,11 @@ const contact = new Contact();
 /**
  * Enviroment variables (local storage)
  */
-if (localStorage.getItem('lang') === null || !['en', 'es'].includes(localStorage.getItem('lang'))) {
+if (localStorage.getItem('lang') === null || !LANGUAGES.includes(localStorage.getItem('lang'))) {
     localStorage.setItem('lang', 'en');
 }
 
-if (localStorage.getItem('screen') === null || !['profile', 'experience', 'projects', 'contact'].includes(localStorage.getItem('screen'))) {
+if (localStorage.getItem('screen') === null || !SCREENS.includes(localStorage.getItem('screen'))) {
     localStorage.setItem('screen', 'profile');
 }
 
@@ -48,7 +48,9 @@ setInterval(() => {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const clock = document.getElementById('clock');
-    clock.innerText = `${day} ${multilangMonths[LANG][month]} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+    clock.innerText = `${day} ${multilangMonths[LANGUAGES.includes(
+        localStorage.getItem('lang')
+    ) ? localStorage.getItem('lang') : 'en'][month]} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
 }, 500);
 
 /**
@@ -81,7 +83,6 @@ navbar.tabs.contact.addEventListener('click', () => {
     localStorage.setItem('screen', 'contact');
 });
 
-
 bar.languages.en.addEventListener('click', () => {
     localStorage.setItem('lang', 'en');
     navbar.renderData();
@@ -90,6 +91,12 @@ bar.languages.en.addEventListener('click', () => {
 
 bar.languages.es.addEventListener('click', () => {
     localStorage.setItem('lang', 'es');
+    navbar.renderData();
+    renderScreen();
+});
+
+bar.languages.pt.addEventListener('click', () => {
+    localStorage.setItem('lang', 'pt');
     navbar.renderData();
     renderScreen();
 });

@@ -1,4 +1,5 @@
 import { projects, navbar } from './language';
+import { LANG, LANGUAGES } from './environment';
 
 export default class Projects {
     constructor() {
@@ -12,12 +13,14 @@ export default class Projects {
     }
 
     renderData() {
-        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-        
-        document.getElementById('windowTitle').innerHTML = navbar.navbarProjects[lang];
+        document.getElementById('windowTitle').innerHTML = navbar.navbarProjects[LANGUAGES.includes(
+            localStorage.getItem('lang')
+        ) ? localStorage.getItem('lang') : 'en'];
 
         for (const k in projects) {
-            document.getElementById(k).innerText = projects[k][lang];
+            document.getElementById(k).innerText = projects[k][LANGUAGES.includes(
+                localStorage.getItem('lang')
+            ) ? localStorage.getItem('lang') : 'en'];
         }
     }
 }

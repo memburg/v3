@@ -1,4 +1,5 @@
 import { experience, navbar } from './language';
+import { LANG, LANGUAGES } from './environment';
 
 export default class Experience {
     constructor() {
@@ -12,12 +13,14 @@ export default class Experience {
     }
 
     renderData() {
-        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-        
-        document.getElementById('windowTitle').innerHTML = navbar.navbarExperience[lang];
+        document.getElementById('windowTitle').innerHTML = navbar.navbarExperience[LANGUAGES.includes(
+            localStorage.getItem('lang')
+        ) ? localStorage.getItem('lang') : 'en'];
 
         for (const k in experience) {
-            document.getElementById(k).innerText = experience[k][lang];
+            document.getElementById(k).innerText = experience[k][LANGUAGES.includes(
+                localStorage.getItem('lang')
+            ) ? localStorage.getItem('lang') : 'en'];
         }
     }
 }

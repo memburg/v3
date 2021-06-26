@@ -1,4 +1,5 @@
 import { navbar } from './language';
+import { LANGUAGES } from './environment';
 
 export default class Navbar {
     constructor() {
@@ -24,10 +25,10 @@ export default class Navbar {
     }
 
     renderData() {
-        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-
         for (const k in this.data) {
-            document.getElementById(k).innerText = this.data[k][lang];
+            document.getElementById(k).innerText = this.data[k][LANGUAGES.includes(
+                localStorage.getItem('lang')
+            ) ? localStorage.getItem('lang') : 'en'];
         }
     }
 }

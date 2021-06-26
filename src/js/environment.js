@@ -6,7 +6,5 @@ export const LANG = localStorage.getItem('lang') || (() => {
     return 'en';
 })();
 
-export const SCREEN = localStorage.getItem('screen') || (() => {
-    localStorage.setItem('screen', 'portfolio');
-    return 'portfolio';
-})();
+export const LANGUAGES = ['en', 'es', 'pt'];
+export const SCREENS = ['profile', 'experience', 'projects', 'contact'];

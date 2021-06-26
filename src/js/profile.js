@@ -1,4 +1,5 @@
 import { profile, navbar } from './language';
+import { LANG, LANGUAGES } from './environment';
 
 export default class Profile {
     constructor() {
@@ -12,12 +13,14 @@ export default class Profile {
     }
 
     renderData() {
-        const lang = ['en', 'es'].includes(localStorage.getItem('lang')) ? localStorage.getItem('lang') : 'en';
-
-        document.getElementById('windowTitle').innerHTML = navbar.navbarProfile[lang];
+        document.getElementById('windowTitle').innerHTML = navbar.navbarProfile[LANGUAGES.includes(
+            localStorage.getItem('lang')
+        ) ? localStorage.getItem('lang') : 'en'];
 
         for (const k in profile) {
-            document.getElementById(k).innerText = profile[k][lang];
+            document.getElementById(k).innerText = profile[k][LANGUAGES.includes(
+                localStorage.getItem('lang')
+            ) ? localStorage.getItem('lang') : 'en'];
         }
     }
 }
