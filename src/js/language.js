@@ -157,9 +157,9 @@ export const projects = {
 
 export const contact = {
     'contactMail': {
-        'en': 'MAIL',
+        'en': 'EMAIL',
         'es': 'CORREO',
-        'pt': 'CORRESPONDÊNCIA'
+        'pt': 'EMAIL'
     },
     'contactMailContent': {
         'en': 'HEISRAMBY[AT]GMAIL.COM',
